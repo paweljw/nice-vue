@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1 v-once>{{ title }}</h1>
+      Your name: <input type="text" v-on:input="changeTitle"/>
+      <p>{{ title }}</p>
+      Here's a link: <a v-bind:href="link">Google</a><br/>
+      Here's another link: <span v-html="completeLink"></span>
+    </div>
+    <script type="text/javascript">
+      /* global Vue */
+      /* eslint-disable no-new */
+      new Vue({
+        el: '#app',
+        data: {
+          title: 'Hello, world!',
+          link: 'http://google.com',
+          completeLink: '<a href="http://google.com">Google</a>'
+        },
+        methods: {
+          changeTitle (event) {
+            this.title = `And hello to you, ${event.target.value}!`
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

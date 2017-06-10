@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="exercise">
+        <p>VueJS is pretty cool - {{ name }} ({{ age }})</p>
+        <p>{{ ageTimesThree() }}</p>
+        <p>{{ Math.random() }}</p>
+        <div>
+            <img style="width:100px;height:100px" v-bind:src="imageHref">
+        </div>
+        <div>
+            <input type="text" v-bind:value="name">
+        </div>
+    </div>
+    <script type="text/javascript">
+      new Vue({
+        el: '#exercise',
+        data: {
+          name: 'Paweł J. W.',
+          age: 26,
+          imageHref: 'https://qph.ec.quoracdn.net/main-qimg-4c711392ac6c9ab350c949579fb096fe'
+        },
+        methods: {
+          ageTimesThree () { return this.age * 3 }
+        }
+      })
+    </script>
+  </body>
+</html>
