@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="exercise">
+      <div>
+        <button v-on:click="alert">Show Alert</button>
+      </div>
+      <div>
+        <input type="text" v-on:keydown="storeValue">
+        <p>{{ value }}</p>
+      </div>
+      <div>
+        <input type="text" v-on:keydown.enter="storeValue">
+        <p>{{ value }}</p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      new Vue({
+        el: '#exercise',
+        data: {
+          value: ''
+        },
+        methods: {
+          alert () { alert('Red alert!') },
+          storeValue (event) { this.value = event.target.value }
+        }
+      })
+    </script>
+  </body>
+</html>
