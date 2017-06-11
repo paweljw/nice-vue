@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="exercise">
+    <!-- 1) Hook up the button to toggle the display of the two paragraphs. Use both v-if and v-show and inspect the elements to see the difference -->
+    <div>
+      <button @click="show = !show">Toggle</button>
+      <p v-if="show">You either see me ...</p>
+      <p v-else>...or me</p>
+      <p v-show="show">You either see me ...</p>
+      <p v-show="!show">...or me</p>
+    </div>
+    <ul>
+      <li v-for="(person, index) in array">{{ index }}: {{ person }}</li>
+    </ul>
+    <ul>
+      <li v-for="(value, key, index) in myObject">{{ key }} @ {{ index }}: {{ value }}</li>
+    </ul>
+    <!-- 4) Print the following object (only the values) and also create a nested loop for the array: {name: 'TESTOBJECT', data: [1.67, 1.33, 0.98, 2.21]} (hint: use v-for and v-if to achieve this) -->
+    <ul>
+      <li v-for="value in testData">
+        <template v-if="value instanceof Array">
+          <div v-for="item in value">{{ item }}</div>
+        </template>
+        <template v-else>
+          <p>{{ value }}</p>
+        </template>
+      </li>
+    </ul>
+  </div>
+  <script src="5_conditionals.js
+  "></script>
+</body>
+</html>
