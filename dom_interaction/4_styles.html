@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="4_styles.css">
+  </head>
+  <body>
+    <div id="exercise">
+      <div>
+        <button @click="startEffect">Start Effect</button>
+        <div id="effect" :class="effect"></div>
+      </div>
+      <hr/>
+      <div :class="['red', 'wide']">I got no class :(</div>
+      <hr/>
+      <div>
+        <input type="text" v-model="someClasses">
+        <div :class="someClasses">I contain some classes</div>
+      </div>
+      <hr/>
+      <div>
+        <input type="text" v-model="newClass">
+        <input type="checkbox" v-model="attachRed">
+        <div :class="[newClass, {red: attachRed}]">I contain newClass and maybe red</div>
+      </div>
+      <hr/>
+      <div>
+        <input type="text" v-model="bgColor">
+        <div :style="{backgroundColor: bgColor}">I have styles attached</div>
+      </div>
+      <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
+      <div>
+        <button v-on:click="startProgress">Start Progress</button>
+        <div :style="progressStyles">{{ progress }}%</div>
+      </div>
+    </div>
+    <script src="4_styles.js"></script>
+  </body>
+</html>
